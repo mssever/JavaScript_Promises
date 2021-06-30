@@ -1,6 +1,7 @@
 'use strict';
 
-function watchTurorialCallback(callback, errorCallback) {
+/*
+function watchTutorialCallback(callback, errorCallback) {
   let userLeft = false;
   let userWatchingLiveStream = true;
 
@@ -14,7 +15,7 @@ function watchTurorialCallback(callback, errorCallback) {
   }
 }
 
-watchTurorialCallback(
+watchTutorialCallback(
   (message) => {
     console.log(message);
   },
@@ -22,3 +23,19 @@ watchTurorialCallback(
     console.log(error.name + " " + error.message);
   }
 );
+*/
+
+let watching = new Promise((resolve, reject) => {
+let userWatchingLiveStream = Math.round(Math.random());
+if(userWatchingLiveStream) {
+  resolve('Thumbs up and subscribe!');
+} else {
+  reject('User left');
+}
+});
+
+watching.then(message => {
+  console.log(message);
+}).catch(message => {
+  console.warn(message);
+})
