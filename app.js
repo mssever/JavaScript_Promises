@@ -26,16 +26,16 @@ watchTutorialCallback(
 */
 
 let watching = new Promise((resolve, reject) => {
-let userWatchingLiveStream = Math.round(Math.random());
-if(userWatchingLiveStream) {
-  resolve('Thumbs up and subscribe!');
-} else {
-  reject('User left');
-}
+  let userWatchingLiveStream = Math.round(Math.random());
+  if(userWatchingLiveStream) {
+    resolve('Thumbs up and subscribe!');
+  } else {
+    reject('User left');
+  }
 });
 
 watching.then(message => {
   console.log(message);
 }).catch(message => {
   console.warn(message);
-})
+});
